@@ -45,13 +45,21 @@
 							<div class="panel-heading" role="tab" id="headingThree">
 								<h4 class="panel-title">
 									<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-			  							Collapsible Group Item #3
+			  							Javascript Debounce Function
 									</a>
 		  						</h4>
 							</div>
 							<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 			  					<div class="panel-body">
-									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+									<pre>function debounce(func, wait, immediate) {&#10;&#09;var timeout;&#10;&#09;return function() {&#10;&#09;&#09;var context = this, args = arguments;&#10;&#09;&#09;var later = function() {&#10;&#09;&#09;&#09;timeout = null;&#10;&#09;&#09;&#09;if (!immediate) func.apply(context, args);&#10;&#09;&#09;};&#10;&#09;&#09;var callNow = immediate && !timeout;&#10;&#09;&#09;clearTimeout(timeout);&#10;&#09;&#09;timeout = setTimeout(later, wait);&#10;&#09;&#09;if (callNow) func.&#10;&#09;&#09;apply(context, args);
+											};
+										};
+										var myEfficientFn = debounce(function() {
+											// All the taxing stuff you do
+										}, 250);
+
+										window.addEventListener('resize', myEfficientFn);
+									</pre>
 								</div>
 							</div>
 						</div>
